@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Daily Tasks</title>
+
+  <link rel="stylesheet" href="todo.css">
+  <script src="todo.js" defer></script>
+</head>
+
+<body>
+  <main class="app">
+
+    <header class="welcome">
+      <div class="sun">☀️</div>
+      <h1>My Daily Tasks</h1>
+      <p>One thing at a time. You've got this!</p>
+      <p id="today-date" class="date"></p>
+    </header>
+
+    <section class="add-section">
+      <h2>What do you want to do?</h2>
+
+      <form id="task-form">
+        <label for="task-input">Write your task here</label>
+        <input
+          type="text"
+          id="task-input"
+          placeholder="e.g. Buy food"
+          maxlength="150"
+          required
+        >
+
+        <label for="reminder-time">When should I remind you? (Optional)</label>
+        <input type="datetime-local" id="reminder-time">
+
+        <button type="submit" class="add-button">
+          + Add My Task
+        </button>
+      </form>
+
+      <p class="small-note">
+        You can add a reminder or leave it empty.
+      </p>
+    </section>
+
+    <section class="tasks-section">
+      <h2>My Tasks for Today</h2>
+
+      <p id="task-count" class="task-count">You have 0 tasks.</p>
+
+      <div id="task-list"></div>
+
+      <div id="empty-message" class="empty-message">
+        <div class="empty-icon">📝</div>
+        <h3>Nothing to do yet!</h3>
+        <p>Add your first task using the box above.</p>
+      </div>
+
+      <div id="finished-message" class="finished-message hidden">
+        🎉 Well done! You have finished all your tasks!
+      </div>
+    </section>
+
+    <section id="alarm-box" class="alarm-box hidden" role="alert">
+      <h2>⏰ Time to do your task!</h2>
+      <p id="alarm-task-name"></p>
+      <button id="stop-alarm" class="done-button">
+        Okay, I understand
+      </button>
+    </section>
+
+    <footer>
+      <p>Made to make your day easier ❤️</p>
+    </footer>
+
+  </main>
+</body>
+</html>
